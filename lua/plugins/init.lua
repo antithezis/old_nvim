@@ -82,10 +82,10 @@ return require('packer').startup(function(use)
     config = require "plugins.configs.cmp",
   }
 
-  --use {
-   -- "L3MON4D3/LuaSnip",
-    --config = require "plugins.configs.luasnip"
-  --}
+  use {
+    "L3MON4D3/LuaSnip",
+    config = require "plugins.configs.luasnip"
+  }
 
   use {"saadparwaiz1/cmp_luasnip"}
 

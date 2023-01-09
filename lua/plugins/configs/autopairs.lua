@@ -15,4 +15,4 @@ if not _autopairs then
     return
 end
 
-autopairs.setup {}
+autopairs.setup({})
