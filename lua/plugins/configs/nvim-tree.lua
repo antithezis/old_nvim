@@ -1,5 +1,5 @@
-require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
-  auto_reload_on_write = true,
+ require("nvim-tree").setup({
+auto_reload_on_write = true,
   disable_netrw = false,
   hijack_cursor = false,
   hijack_netrw = true,
@@ -109,5 +109,5 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
       profile = false,
     },
   },
-} -- END_DEFAULT_OPTS
+}) -- END_DEFAULT_OPTS
 

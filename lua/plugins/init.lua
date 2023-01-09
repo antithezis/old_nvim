@@ -57,11 +57,11 @@ return require('packer').startup(function(use)
 
   use { "rmehri01/onenord.nvim" }
   use { "goolord/alpha-nvim", config = require "plugins.configs.alpha" }
-  use { "kyazdani42/nvim-web-devicons", config = require "plugins.configs.icons" }
+  use { "nvim-tree/nvim-web-devicons", config = require "plugins.configs.icons" }
   use {
     "nvim-lualine/lualine.nvim",
    config = require "plugins.configs.lualine",
-    requires = { "kyazdani42/nvim-web-devicons", opt = true },
+    requires = { "nvim-tree/nvim-web-devicons", opt = true },
   }
 
   use {
@@ -90,10 +90,10 @@ return require('packer').startup(function(use)
   use {
     'nvim-tree/nvim-tree.lua',
     requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icon
+      'nvim-tree/nvim-web-devicons', -- optional, for file icon
     },
-    config = require "plugins.configs.nvim-tree",
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    tag = 'nightly', -- optional, updated every week. (see issue #1193)
+   config = require "plugins.configs.nvim-tree"
   }
 
   use {
