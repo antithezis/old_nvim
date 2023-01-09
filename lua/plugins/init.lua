@@ -5,6 +5,8 @@ local install_path = fn.stdpath ("data") .. "/site/pack/packer/start/packer.nvim
 
 if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+  vim.cmd "packadd packer.nvim"
+  vim.cmd "PackerSync"
 end
 
 return require('packer').startup(function(use)
@@ -45,7 +47,7 @@ return require('packer').startup(function(use)
       "williamboman/mason-lspconfig.nvim",
       "jose-elias-alvarez/typescript.nvim",
     },
-   config = require "plugins.configs.lsp"
+   config = pcall(require, "plugins.configs.lsp")
   }
 
   use { 'ibhagwan/fzf-lua',
@@ -93,7 +95,7 @@ return require('packer').startup(function(use)
       'nvim-tree/nvim-web-devicons', -- optional, for file icon
     },
     tag = 'nightly', -- optional, updated every week. (see issue #1193)
-   config = require "plugins.configs.nvim-tree"
+   config = pcall(require, "plugins.configs.nvim-tree")
   }
 
   use {
