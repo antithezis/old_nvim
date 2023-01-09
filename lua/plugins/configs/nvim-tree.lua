@@ -1,5 +1,5 @@
- require("nvim-tree").setup({
-auto_reload_on_write = true,
+require("nvim-tree").setup({
+  auto_reload_on_write = true,
   disable_netrw = false,
   hijack_cursor = false,
   hijack_netrw = true,
@@ -11,8 +11,7 @@ auto_reload_on_write = true,
   sort_by = "name",
   update_cwd = false,
   view = {
-    width = 55,
-    height = 30,
+    adaptive_size = true,
     hide_root_folder = false,
     side = "left",
     preserve_window_proportions = false,

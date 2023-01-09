@@ -26,6 +26,7 @@ mapper('n', '<leader>d', ':t. <CR>')
 -- Telescope
 mapper('n', '<Leader>ff', ':Telescope find_files <CR>')
 mapper('n', '<Leader>fg', ':Telescope live_grep <CR>')
+
 -- mapper('n', '<C-b>', ':Telescope buffers <CR>')
 mapper('n', '<Leader>fh',':Telescope help_tags <CR>')
 
@@ -39,7 +40,6 @@ mapper("n", "<Leader>re", "<cmd>lua require('telescope.builtin').git_commits()<C
 mapper("n", "H", "<cmd>lua require('telescope.builtin').lsp_code_actions(require('telescope.themes').get_cursor())<CR>") -- code actions
 
 -- nvim-tree
-
 mapper('n', '<C-b>', ':NvimTreeToggle <CR>')
 mapper('n', '<Leader>r', ':NvimTreeRefresh <CR>')
 mapper('n', '<Leader>b', ':NvimTreeFindFile <CR>')

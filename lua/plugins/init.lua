@@ -38,19 +38,19 @@ return require('packer').startup(function(use)
    config = require "plugins.configs.treesitter"
   }
 
---  use {
-  --  "williamboman/mason.nvim",
-   -- requires = {
-    --  "neovim/nvim-lspconfig",
-     -- "williamboman/mason-lspconfig.nvim",
-      --"jose-elias-alvarez/typescript.nvim",
-   -- },
-   --config = require "plugins.configs.lsp"
- -- }
+  use {
+    "williamboman/mason.nvim",
+    requires = {
+      "neovim/nvim-lspconfig",
+      "williamboman/mason-lspconfig.nvim",
+      "jose-elias-alvarez/typescript.nvim",
+    },
+   config = require "plugins.configs.lsp"
+  }
 
   use { 'ibhagwan/fzf-lua',
     -- optional for icon support
-    requires = { 'kyazdani42/nvim-web-devicons' }
+    requires = { 'nvim-tree/nvim-web-devicons' }
   }
 
   -- UI
