@@ -16,7 +16,7 @@ return require('packer').startup(function(use)
 
   use {
     'windwp/nvim-autopairs',
-     config = require "plugins.configs.autopairs"
+     config = pcall(require, "plugins.configs.autopairs")
   }
   use {
     "nvim-telescope/telescope.nvim",
@@ -82,12 +82,12 @@ return require('packer').startup(function(use)
     config = require "plugins.configs.cmp",
   }
 
-  use {
-    "L3MON4D3/LuaSnip",
-    config = require "plugins.configs.luasnip"
-  }
+  --use {
+    --"L3MON4D3/LuaSnip",
+    --config = pcall(require, "plugins.configs.luasnip")
+  --}
 
-  use {"saadparwaiz1/cmp_luasnip"}
+  -- use {"saadparwaiz1/cmp_luasnip"}
 
   use {
     'nvim-tree/nvim-tree.lua',

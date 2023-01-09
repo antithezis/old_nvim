@@ -1,4 +1,4 @@
-local ok, treesitter = pcall(require, "nvim-treesitter")
+local ok, treesitter = pcall(require, "nvim-treesitter.configs")
 
 if not ok then
     return
@@ -7,8 +7,8 @@ end
 local colors = require("themes.theme").colors
 -- local injections = require("./injections.scm")
 
-treesitter.setup {
-    autotag = {
+local options = {
+ autotag = {
         enable = true,
     },
     ensure_installed = "all",
@@ -75,4 +75,7 @@ goto_previous_end = {
 },
 autopairs = { enable = true },
 
+
 }
+
+treesitter.setup(options)
