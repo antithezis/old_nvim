@@ -37,7 +37,7 @@ return require('packer').startup(function(use)
       "p00f/nvim-ts-rainbow",
     },
     run = ':TSUpdate',
-   config = require "plugins.configs.treesitter"
+   config = pcall(require, "plugins.configs.treesitter")
   }
 
   use {
