@@ -6,6 +6,7 @@ local install_path = fn.stdpath ("data") .. "/site/pack/packer/start/packer.nvim
 if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
 end
+
 return require('packer').startup(function(use)
 
   -- My plugins here
@@ -37,15 +38,15 @@ return require('packer').startup(function(use)
    config = require "plugins.configs.treesitter"
   }
 
-  use {
-    "williamboman/mason.nvim",
-    requires = {
-      "neovim/nvim-lspconfig",
-      "williamboman/mason-lspconfig.nvim",
-      "jose-elias-alvarez/typescript.nvim",
-    },
-   config = require "plugins.configs.lsp"
-  }
+--  use {
+  --  "williamboman/mason.nvim",
+   -- requires = {
+    --  "neovim/nvim-lspconfig",
+     -- "williamboman/mason-lspconfig.nvim",
+      --"jose-elias-alvarez/typescript.nvim",
+   -- },
+   --config = require "plugins.configs.lsp"
+ -- }
 
   use { 'ibhagwan/fzf-lua',
     -- optional for icon support
@@ -79,15 +80,15 @@ return require('packer').startup(function(use)
     config = require "plugins.configs.cmp",
   }
 
-  use {
-    "L3MON4D3/LuaSnip",
-    config = require "plugins.configs.luasnip"
-  }
+  --use {
+   -- "L3MON4D3/LuaSnip",
+    --config = require "plugins.configs.luasnip"
+  --}
 
   use {"saadparwaiz1/cmp_luasnip"}
 
   use {
-    'kyazdani42/nvim-tree.lua',
+    'nvim-tree/nvim-tree.lua',
     requires = {
       'kyazdani42/nvim-web-devicons', -- optional, for file icon
     },
