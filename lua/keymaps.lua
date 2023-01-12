@@ -21,7 +21,8 @@ mapper('n', '<C-H>', '20 <C-w><')
 
 -- Text editor
 mapper('n', '<C-a>', 'gg<S-v>G')
-mapper('n', '<leader>d', ':t. <CR>')
+mapper('i', '<C-[>', '<Esc>')
+mapper('v', '<C-[>', '<Esc>')
 
 -- Telescope
 mapper('n', '<Leader>ff', ':Telescope find_files <CR>')
@@ -32,7 +33,7 @@ mapper('n', '<Leader>fh',':Telescope help_tags <CR>')
 
 mapper('n','<Leader>fd', ':Telescope file_browser <CR>')
 mapper("n", "<C-f>", "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>") -- search lines in current buffer
-mapper("n", "<Leader>fr", "<cmd>lua require('telescope.builtin').lsp_references()<CR>") -- search references to symbol under cursor
+--mapper("n", "<Leader>fr", "<cmd>lua require('telescope.builtin').lsp_references()<CR>") -- search references to symbol under cursor
 mapper("n", "<Leader>co", "<cmd>lua require('telescope.builtin').colorscheme()<CR>") -- colorschemes
 mapper("n", "<Leader>gc", "<cmd>lua require('telescope.builtin').git_branches()<CR>") -- checkout different branches
 mapper("n", "<Leader>re", "<cmd>lua require('telescope.builtin').git_commits()<CR>") -- checkout commits; <CR> to checkout, <C-r>[m, s, h] to reset [mixed, soft, hard]
@@ -56,19 +57,22 @@ mapper('n', '<C-t>', ':split <CR> :ter <CR> :resize 15 <CR>')
 
 -- Coc
 -- mapper('n', 'gd', '<Plug>(coc-definition)')
-mapper('n', 'gy', '<Plug>(coc-type-definition)')
-mapper('n', 'gi', '<Plug>(coc-implementation)')
-mapper('n', 'gr', '<Plug>(coc-references)')
-
-mapper('n', '<Leader>a', '<Plug>(coc-codeaction-selected)')
-mapper('n', '<Leader>qf', '<Plug>(coc-fix-current)')
-mapper('n', '<Leader>rn', '<Plug>(coc-rename)')
-mapper('n', 'ff', '<Plug>(coc-format-selected)')
+--mapper('n', 'gy', '<Plug>(coc-type-definition)')
+--mapper('n', 'gi', '<Plug>(coc-implementation)')
+--mapper('n', 'gr', '<Plug>(coc-references)')
+--mapper('n', '<Leader>a', '<Plug>(coc-codeaction-selected)')
+--mapper('n', '<Leader>qf', '<Plug>(coc-fix-current)')
+--mapper('n', '<Leader>rn', '<Plug>(coc-rename)')
+--mapper('n', 'ff', '<Plug>(coc-format-selected)')
 
 -- LSP
-vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
+vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action)
+vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename)
+vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references)
 
-
-
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
+vim.keymap.set('n', 'gi', vim.lsp.buf.implementation)
+vim.keymap.set('n', 'K', vim.lsp.buf.hover)
+vim.keymap.set('n', 'ff', vim.lsp.buf.format)
 
 
