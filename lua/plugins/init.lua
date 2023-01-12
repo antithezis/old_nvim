@@ -1,15 +1,12 @@
--- setup packer + plugins
-local fn = vim.fn
--- local install_path = fn.stdpath "data" .. "/site/pack/packer/opt/packer.nvim"
-local install_path = fn.stdpath ("data") .. "/site/pack/packer/start/packer.nvim"
-
-if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
-  vim.cmd "packadd packer.nvim"
-  vim.cmd "PackerSync"
+local status, packer = pcall(require, "packer")
+if (not status) then
+  print("Packer is not installed")
+  return
 end
 
-return require('packer').startup(function(use)
+vim.cmd [[packadd packer.nvim]]
+
+packer.startup(function(use)
 
   -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
@@ -49,6 +46,18 @@ return require('packer').startup(function(use)
     },
    config = pcall(require, "plugins.configs.lsp")
   }
+  
+  use({
+    "glepnir/lspsaga.nvim",
+      branch = "main",
+      config = function()
+        local saga = require("lspsaga")
+
+        saga.init_lsp_saga({
+            -- your configuration
+        })
+    end,
+  })
 
   use { 'ibhagwan/fzf-lua',
     -- optional for icon support
@@ -116,7 +125,7 @@ return require('packer').startup(function(use)
   use 'terryma/vim-multiple-cursors'
 
   -- React
-  use {'neoclide/coc.nvim', branch = 'release'}
+  --use {'neoclide/coc.nvim', branch = 'release'}
   use {'styled-components/vim-styled-components',  branch = 'main' }
   use 'fleischie/vim-styled-components'
 
@@ -141,9 +150,13 @@ return require('packer').startup(function(use)
   }
   
   use 'lewis6991/impatient.nvim'
-  use {
-    'NvChad/nvterm',
-    config = require "plugins.configs.nvterm"
+
+ use {
+    "akinsho/toggleterm.nvim",
+    tag = '*', 
+    config = function()
+      require("toggleterm").setup()
+    end
   }
 
 end)
