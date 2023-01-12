@@ -82,12 +82,12 @@ return require('packer').startup(function(use)
     config = require "plugins.configs.cmp",
   }
 
-  --use {
-    --"L3MON4D3/LuaSnip",
-    --config = pcall(require, "plugins.configs.luasnip")
-  --}
+  use {
+    "L3MON4D3/LuaSnip",
+    config = pcall(require, "plugins.configs.luasnip")
+  }
 
-  -- use {"saadparwaiz1/cmp_luasnip"}
+  use {"saadparwaiz1/cmp_luasnip"}
 
   use {
     'nvim-tree/nvim-tree.lua',
