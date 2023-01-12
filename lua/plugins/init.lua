@@ -13,18 +13,18 @@ packer.startup(function(use)
 
   use {
     'windwp/nvim-autopairs',
-     config = pcall(require, "plugins.configs.autopairs")
+    config = pcall(require, "plugins.configs.autopairs")
   }
   use {
     "nvim-telescope/telescope.nvim",
     requires = {
-      {'nvim-lua/popup.nvim'},
-      {'nvim-lua/plenary.nvim'},
-      {'nvim-telescope/telescope-fzf-native.nvim', run="make"},
-      {'nvim-telescope/telescope-symbols.nvim'},
+      { 'nvim-lua/popup.nvim' },
+      { 'nvim-lua/plenary.nvim' },
+      { 'nvim-telescope/telescope-fzf-native.nvim', run = "make" },
+      { 'nvim-telescope/telescope-symbols.nvim' },
       { "nvim-telescope/telescope-file-browser.nvim" },
     },
-   config = require "plugins.configs.telescope",
+    config = require "plugins.configs.telescope",
   }
 
   use {
@@ -34,7 +34,7 @@ packer.startup(function(use)
       "p00f/nvim-ts-rainbow",
     },
     run = ':TSUpdate',
-   config = pcall(require, "plugins.configs.treesitter")
+    config = pcall(require, "plugins.configs.treesitter")
   }
 
   use {
@@ -44,18 +44,18 @@ packer.startup(function(use)
       "williamboman/mason-lspconfig.nvim",
       "jose-elias-alvarez/typescript.nvim",
     },
-   config = pcall(require, "plugins.configs.lsp")
+    config = pcall(require, "plugins.configs.lsp")
   }
-  
+
   use({
     "glepnir/lspsaga.nvim",
-      branch = "main",
-      config = function()
-        local saga = require("lspsaga")
+    branch = "main",
+    config = function()
+      local saga = require("lspsaga")
 
-        saga.init_lsp_saga({
-            -- your configuration
-        })
+      saga.init_lsp_saga({
+        -- your configuration
+      })
     end,
   })
 
@@ -71,7 +71,7 @@ packer.startup(function(use)
   use { "nvim-tree/nvim-web-devicons", config = require "plugins.configs.icons" }
   use {
     "nvim-lualine/lualine.nvim",
-   config = require "plugins.configs.lualine",
+    config = require "plugins.configs.lualine",
     requires = { "nvim-tree/nvim-web-devicons", opt = true },
   }
 
@@ -96,7 +96,7 @@ packer.startup(function(use)
     config = pcall(require, "plugins.configs.luasnip")
   }
 
-  use {"saadparwaiz1/cmp_luasnip"}
+  use { "saadparwaiz1/cmp_luasnip" }
 
   use {
     'nvim-tree/nvim-tree.lua',
@@ -104,7 +104,7 @@ packer.startup(function(use)
       'nvim-tree/nvim-web-devicons', -- optional, for file icon
     },
     tag = 'nightly', -- optional, updated every week. (see issue #1193)
-   config = pcall(require, "plugins.configs.nvim-tree")
+    config = pcall(require, "plugins.configs.nvim-tree")
   }
 
   use {
@@ -126,13 +126,13 @@ packer.startup(function(use)
 
   -- React
   --use {'neoclide/coc.nvim', branch = 'release'}
-  use {'styled-components/vim-styled-components',  branch = 'main' }
+  use { 'styled-components/vim-styled-components', branch = 'main' }
   use 'fleischie/vim-styled-components'
 
   -- markdown
   use({
-      "iamcco/markdown-preview.nvim",
-      run = function() vim.fn["mkdp#util#install"]() end,
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
   })
 
   use 'github/copilot.vim'
@@ -140,7 +140,7 @@ packer.startup(function(use)
   use {
     'prettier/vim-prettier',
     run = 'yarn install',
-    ft = {'javascript', 'typescript', 'css', 'html', 'scss', 'graphql', 'markdown', 'react'}
+    ft = { 'javascript', 'typescript', 'css', 'html', 'scss', 'graphql', 'markdown', 'react' }
   }
 
   use {
@@ -148,12 +148,12 @@ packer.startup(function(use)
     requires = { "nvim-lua/plenary.nvim" },
     config = require "plugins.configs.rest"
   }
-  
+
   use 'lewis6991/impatient.nvim'
 
- use {
+  use {
     "akinsho/toggleterm.nvim",
-    tag = '*', 
+    tag = '*',
     config = function()
       require("toggleterm").setup()
     end
