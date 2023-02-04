@@ -10,6 +10,7 @@ packer.startup(function(use)
 
   -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
+  use 'ThePrimeagen/harpoon'
 
   use {
     'windwp/nvim-autopairs',
@@ -124,18 +125,11 @@ packer.startup(function(use)
   use 'christoomey/vim-tmux-navigator'
   use 'terryma/vim-multiple-cursors'
 
-  -- React
-  --use {'neoclide/coc.nvim', branch = 'release'}
-  use { 'styled-components/vim-styled-components', branch = 'main' }
-  use 'fleischie/vim-styled-components'
-
   -- markdown
   use({
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
   })
-
-  use 'github/copilot.vim'
 
   use {
     'prettier/vim-prettier',
@@ -150,13 +144,5 @@ packer.startup(function(use)
   }
 
   use 'lewis6991/impatient.nvim'
-
-  use {
-    "akinsho/toggleterm.nvim",
-    tag = '*',
-    config = function()
-      require("toggleterm").setup()
-    end
-  }
 
 end)

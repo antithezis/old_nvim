@@ -1,5 +1,5 @@
-local mapper = function (mode, key, result)
-	vim.api.nvim_set_keymap(mode, key, result, {noremap = true, silent = true})
+local mapper = function(mode, key, result)
+	vim.api.nvim_set_keymap(mode, key, result, { noremap = true, silent = true })
 end
 
 vim.g.mapleader = ' '
@@ -29,9 +29,9 @@ mapper('n', '<Leader>ff', ':Telescope find_files <CR>')
 mapper('n', '<Leader>fg', ':Telescope live_grep <CR>')
 
 -- mapper('n', '<C-b>', ':Telescope buffers <CR>')
-mapper('n', '<Leader>fh',':Telescope help_tags <CR>')
+mapper('n', '<Leader>fh', ':Telescope help_tags <CR>')
 
-mapper('n','<Leader>fd', ':Telescope file_browser <CR>')
+mapper('n', '<Leader>fd', ':Telescope file_browser <CR>')
 mapper("n", "<C-f>", "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>") -- search lines in current buffer
 --mapper("n", "<Leader>fr", "<cmd>lua require('telescope.builtin').lsp_references()<CR>") -- search references to symbol under cursor
 mapper("n", "<Leader>co", "<cmd>lua require('telescope.builtin').colorscheme()<CR>") -- colorschemes
@@ -55,24 +55,12 @@ mapper('n', '<Leader>br', ': BraceyReload <CR>')
 -- Terminal
 mapper('n', '<C-t>', ':split <CR> :ter <CR> :resize 15 <CR>')
 
--- Coc
--- mapper('n', 'gd', '<Plug>(coc-definition)')
---mapper('n', 'gy', '<Plug>(coc-type-definition)')
---mapper('n', 'gi', '<Plug>(coc-implementation)')
---mapper('n', 'gr', '<Plug>(coc-references)')
---mapper('n', '<Leader>a', '<Plug>(coc-codeaction-selected)')
---mapper('n', '<Leader>qf', '<Plug>(coc-fix-current)')
---mapper('n', '<Leader>rn', '<Plug>(coc-rename)')
---mapper('n', 'ff', '<Plug>(coc-format-selected)')
-
 -- LSP
 vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action)
 vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename)
-vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references)
+-- vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references)
 
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
 vim.keymap.set('n', 'gi', vim.lsp.buf.implementation)
 vim.keymap.set('n', 'K', vim.lsp.buf.hover)
 vim.keymap.set('n', 'ff', vim.lsp.buf.format)
-
-
