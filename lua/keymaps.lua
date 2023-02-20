@@ -19,6 +19,9 @@ mapper('n', '<C-q>', ':q <CR>')
 mapper('n', '<C-L>', '20 <C-w>>')
 mapper('n', '<C-H>', '20 <C-w><')
 
+-- Harppon
+
+mapper('n', '<C-TAB>', ':lua require("harpoon.ui").toggle_quick_menu()')
 -- Text editor
 mapper('n', '<C-a>', 'gg<S-v>G')
 mapper('i', '<C-[>', '<Esc>')
@@ -33,7 +36,7 @@ mapper('n', '<Leader>fh', ':Telescope help_tags <CR>')
 
 mapper('n', '<Leader>fd', ':Telescope file_browser <CR>')
 mapper("n", "<C-f>", "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>") -- search lines in current buffer
---mapper("n", "<Leader>fr", "<cmd>lua require('telescope.builtin').lsp_references()<CR>") -- search references to symbol under cursor
+mapper("n", "<Leader>gr", "<cmd>lua require('telescope.builtin').lsp_references()<CR>") -- search references to symbol under cursor
 mapper("n", "<Leader>co", "<cmd>lua require('telescope.builtin').colorscheme()<CR>") -- colorschemes
 mapper("n", "<Leader>gc", "<cmd>lua require('telescope.builtin').git_branches()<CR>") -- checkout different branches
 mapper("n", "<Leader>re", "<cmd>lua require('telescope.builtin').git_commits()<CR>") -- checkout commits; <CR> to checkout, <C-r>[m, s, h] to reset [mixed, soft, hard]

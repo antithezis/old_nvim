@@ -18,8 +18,6 @@ vim.g.mkdp_auto_start = 1
 vim.g.mkdp_auto_close = 1
 vim.g.mkdp_refresh_slow = 1
 
-
-
 -- vim.cmd[[highlight Normal guibg=NONE ctermbg=NONE]]
 
 local options = {
@@ -29,7 +27,7 @@ local options = {
     fileencoding = "utf-8",
     backup = false,
     swapfile = false,
-    hlsearch = true,
+    hlsearch = false,
     incsearch = true,
     showmode = false,
     expandtab = true,

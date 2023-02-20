@@ -95,10 +95,10 @@ ins_left {
     function()
         vim.api.nvim_command(
             "hi LualineViMode guifg="
-                .. mode_color[vim.fn.mode()]
-                .. " guibg="
-                .. colors.grey14
-                .. " gui=bold cterm=bold"
+            .. mode_color[vim.fn.mode()]
+            .. " guibg="
+            .. colors.grey14
+            .. " gui=bold cterm=bold"
         )
         return require("lualine.utils.mode").get_mode()
     end,
@@ -263,4 +263,3 @@ ins_left_inactive {
 }
 
 lualine.setup(config)
-
